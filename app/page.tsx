@@ -87,14 +87,20 @@ export default function LandingPage() {
                       </a>
                     </div>
                     <div className="flex justify-start items-center">
-                      <div className="flex flex-col justify-center text-[rgba(49,45,43,0.80)] text-xs md:text-[13px] font-medium leading-[14px] font-sans">
-                        Leaderboard
-                      </div>
+                      <a
+                        href="#game-features"
+                        className="flex flex-col justify-center text-[rgba(49,45,43,0.80)] text-xs md:text-[13px] font-medium leading-[14px] font-sans hover:text-[#37322F] transition-colors duration-200 cursor-pointer"
+                      >
+                        Game Features
+                      </a>
                     </div>
                     <div className="flex justify-start items-center">
-                      <div className="flex flex-col justify-center text-[rgba(49,45,43,0.80)] text-xs md:text-[13px] font-medium leading-[14px] font-sans">
-                        AI Ethics
-                      </div>
+                      <a
+                        href="#testimonials"
+                        className="flex flex-col justify-center text-[rgba(49,45,43,0.80)] text-xs md:text-[13px] font-medium leading-[14px] font-sans hover:text-[#37322F] transition-colors duration-200 cursor-pointer"
+                      >
+                        Testimonials
+                      </a>
                     </div>
                   </div>
                 </div>
@@ -447,7 +453,7 @@ export default function LandingPage() {
                       </div>
                       <div className="w-full h-[200px] sm:h-[250px] md:h-[300px] rounded-lg overflow-hidden">
                         <img
-                          src="/Screenshot 2025-10-25 at 9.02.42 AM.png"
+                          src="/Clone yourself.jpeg"
                           alt="Voice setup and training screenshot"
                           className="w-full h-full object-cover"
                         />
@@ -466,7 +472,7 @@ export default function LandingPage() {
                       </div>
                       <div className="w-full h-[200px] sm:h-[250px] md:h-[300px] rounded-lg overflow-hidden">
                         <img
-                          src="/pexels-pixabay-257904.jpg"
+                          src="/adb9887a-729f-4f1c-a350-b130c1f0c634.jpeg"
                           alt="Real-time detection visual"
                           className="w-full h-full object-cover"
                         />
@@ -483,9 +489,9 @@ export default function LandingPage() {
                           Strategic gameplay mechanics require players to develop sophisticated decision-making frameworks. The system incorporates psychological elements and timing-based challenges that test players' ability to balance risk and opportunity while maintaining optimal performance under pressure.
                         </p>
                       </div>
-                      <div className="w-full h-[200px] sm:h-[250px] md:h-[300px] rounded-lg overflow-hidden relative bg-transparent">
+                      <div className="w-full h-[200px] sm:h-[250px] md:h-[300px] rounded-lg overflow-hidden relative">
                         <img
-                          src="/Screenshot 2025-10-25 at 9.04.44 AM.png"
+                          src="/_.jpeg"
                           alt="Strategic mind games visual"
                           className="w-full h-full object-cover"
                         />
@@ -506,7 +512,7 @@ export default function LandingPage() {
                       </div>
                       <div className="w-full h-[200px] sm:h-[250px] md:h-[300px] rounded-lg overflow-hidden relative">
                         <img
-                          src="/Screenshot 2025-10-25 at 9.05.44 AM.png"
+                          src="/b9ef8ff06d54f46a83b93a99bf197f7b.jpg"
                           alt="Post-game analysis visual"
                           className="w-full h-full object-cover"
                         />
@@ -531,10 +537,14 @@ export default function LandingPage() {
               </div>
 
               {/* Documentation Section */}
-              <DocumentationSection />
+              <div id="game-features">
+                <DocumentationSection />
+              </div>
 
               {/* Testimonials Section */}
-              <TestimonialsSection />
+              <div id="testimonials">
+                <TestimonialsSection />
+              </div>
 
               {/* Pricing Section */}
               {/* <PricingSection /> */}
