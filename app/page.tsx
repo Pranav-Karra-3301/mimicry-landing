@@ -28,6 +28,7 @@ function Badge({ icon, text }: { icon: React.ReactNode; text: string }) {
 
 export default function LandingPage() {
   const [activeCard, setActiveCard] = useState(0)
+  const [progress, setProgress] = useState(0)
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -36,6 +37,24 @@ export default function LandingPage() {
 
     return () => clearInterval(interval)
   }, [])
+
+  useEffect(() => {
+    const progressInterval = setInterval(() => {
+      setProgress((prev) => {
+        if (prev >= 100) {
+          return 0
+        }
+        return prev + 2 // Increment by 2% every 100ms for smooth progress
+      })
+    }, 100)
+
+    return () => clearInterval(progressInterval)
+  }, [activeCard])
+
+  // Reset progress when activeCard changes
+  useEffect(() => {
+    setProgress(0)
+  }, [activeCard])
 
   const handleCardClick = (index: number) => {
     setActiveCard(index)
@@ -151,13 +170,6 @@ export default function LandingPage() {
 
               <div className="w-full max-w-[960px] lg:w-[960px] pt-2 sm:pt-4 pb-6 sm:pb-8 md:pb-10 px-2 sm:px-4 md:px-6 lg:px-11 flex flex-col justify-center items-center gap-2 relative z-5 my-8 sm:my-12 md:my-16 lg:my-16 mb-0 lg:pb-0">
                 <div className="w-full max-w-[960px] lg:w-[960px] h-[200px] sm:h-[280px] md:h-[450px] lg:h-[695.55px] bg-white shadow-[0px_0px_0px_0.9056603908538818px_rgba(0,0,0,0.08)] overflow-hidden rounded-[6px] sm:rounded-[8px] lg:rounded-[9.06px] flex flex-col justify-start items-start relative">
-                  {/* Slideshow Progress Bar */}
-                  <div className="absolute top-0 left-0 right-0 h-1 bg-gray-100 z-10">
-                    <div 
-                      className="h-full bg-gradient-to-r from-blue-500 to-purple-600 transition-all duration-100 ease-linear"
-                      style={{ width: `${activeCard === 0 ? 100 : 0}%` }}
-                    />
-                  </div>
                   
                   {/* Slideshow Indicators */}
                   <div className="absolute top-4 right-4 flex gap-2 z-10">
@@ -257,21 +269,21 @@ export default function LandingPage() {
                     title="Voice Setup"
                     description="Quick 10-second voice samples to create AI clones. Experience the uncanny valley where human and artificial become indistinguishable."
                     isActive={activeCard === 0}
-                    progress={0}
+                    progress={activeCard === 0 ? progress : 0}
                     onClick={() => handleCardClick(0)}
                   />
                   <FeatureCard
                     title="Secret Roles"
                     description="One player becomes the target, the other the detector. Strategic timing and psychological warfare begin before the AI even speaks."
                     isActive={activeCard === 1}
-                    progress={0}
+                    progress={activeCard === 1 ? progress : 0}
                     onClick={() => handleCardClick(1)}
                   />
                   <FeatureCard
                     title="Mind Games"
                     description="Train your ear to spot the subtle tells: response delays, breathing patterns, word choices. Every conversation is a masterclass in human behavior."
                     isActive={activeCard === 2}
-                    progress={0}
+                    progress={activeCard === 2 ? progress : 0}
                     onClick={() => handleCardClick(2)}
                   />
                 </div>
