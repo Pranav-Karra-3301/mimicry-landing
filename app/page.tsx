@@ -10,7 +10,6 @@ import NumbersThatSpeak from "../components/numbers-that-speak"
 import DocumentationSection from "../components/documentation-section"
 import TestimonialsSection from "../components/testimonials-section"
 import FAQSection from "../components/faq-section"
-import PricingSection from "../components/pricing-section"
 import CTASection from "../components/cta-section"
 import FooterSection from "../components/footer-section"
 
@@ -558,8 +557,114 @@ export default function LandingPage() {
                 <TestimonialsSection />
               </div>
 
-              {/* Pricing Section */}
-              {/* <PricingSection /> */}
+              {/* Founders Section */}
+              <div className="w-full border-b border-[rgba(55,50,47,0.12)] flex flex-col justify-center items-center">
+                <div className="self-stretch px-4 sm:px-6 md:px-8 lg:px-0 lg:max-w-[1060px] lg:w-[1060px] py-8 sm:py-12 md:py-16 border-b border-[rgba(55,50,47,0.12)] flex justify-center items-center gap-6">
+                  <div className="w-full max-w-[616px] lg:w-[616px] px-4 sm:px-6 py-4 sm:py-5 shadow-[0px_2px_4px_rgba(50,45,43,0.06)] overflow-hidden rounded-lg flex flex-col justify-start items-center gap-3 sm:gap-4 shadow-none">
+                    <Badge
+                      icon={
+                        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <circle cx="6" cy="6" r="5" stroke="#37322F" strokeWidth="1" fill="none" />
+                          <path d="M6 3v3l2 1" stroke="#37322F" strokeWidth="1" fill="none" />
+                        </svg>
+                      }
+                      text="Meet the Founders"
+                    />
+                    <div className="w-full max-w-[598.06px] lg:w-[598.06px] text-center flex justify-center flex-col text-[#49423D] text-xl sm:text-2xl md:text-3xl lg:text-5xl font-semibold leading-tight md:leading-[60px] font-sans tracking-tight">
+                      The Minds Behind Mimicry
+                    </div>
+                    <div className="self-stretch text-center text-[#605A57] text-sm sm:text-base font-normal leading-6 sm:leading-7 font-sans">
+                      Three visionaries bringing AI voice detection to life
+                      <br />
+                      through innovative technology and strategic gameplay.
+                    </div>
+                  </div>
+                </div>
+
+                {/* Founders Grid */}
+                <div className="self-stretch flex justify-center items-start">
+                  <div className="w-4 sm:w-6 md:w-8 lg:w-12 self-stretch relative overflow-hidden">
+                    {/* Left decorative pattern */}
+                    <div className="w-[120px] sm:w-[140px] md:w-[162px] left-[-40px] sm:left-[-50px] md:left-[-58px] top-[-120px] absolute flex flex-col justify-start items-start">
+                      {Array.from({ length: 100 }).map((_, i) => (
+                        <div
+                          key={i}
+                          className="self-stretch h-3 sm:h-4 rotate-[-45deg] origin-top-left outline outline-[0.5px] outline-[rgba(3,7,18,0.08)] outline-offset-[-0.25px]"
+                        />
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="flex-1 px-0 sm:px-2 md:px-0 flex flex-col md:flex-row justify-center items-stretch gap-0">
+                    {/* Founder Cards */}
+                    <div className="w-full md:flex-1 self-stretch px-6 py-8 overflow-hidden flex flex-col justify-center items-center gap-4 border-b md:border-b-0 md:border-r border-[#E0DEDB]/80">
+                      <div className="w-24 h-24 rounded-full overflow-hidden shadow-lg">
+                        <img
+                          src="/Pranav.png"
+                          alt="Pranav"
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                      <div className="text-center">
+                        <div className="text-[#49423D] text-lg font-semibold leading-6 font-sans">
+                          Pranav
+                        </div>
+                        <div className="text-[#605A57] text-sm font-normal leading-5 font-sans">
+                          Co-Founder & CEO
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="w-full md:flex-1 self-stretch px-6 py-8 overflow-hidden flex flex-col justify-center items-center gap-4 border-b md:border-b-0 md:border-r border-[#E0DEDB]/80">
+                      <div className="w-24 h-24 rounded-full overflow-hidden shadow-lg">
+                        <img
+                          src="/Manit.png"
+                          alt="Manit"
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                      <div className="text-center">
+                        <div className="text-[#49423D] text-lg font-semibold leading-6 font-sans">
+                          Manit
+                        </div>
+                        <div className="text-[#605A57] text-sm font-normal leading-5 font-sans">
+                          Co-Founder & CTO
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="w-full md:flex-1 self-stretch px-6 py-8 overflow-hidden flex flex-col justify-center items-center gap-4">
+                      <div className="w-24 h-24 rounded-full overflow-hidden shadow-lg">
+                        <img
+                          src="/Binay.png"
+                          alt="Binay"
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                      <div className="text-center">
+                        <div className="text-[#49423D] text-lg font-semibold leading-6 font-sans">
+                          Binay
+                        </div>
+                        <div className="text-[#605A57] text-sm font-normal leading-5 font-sans">
+                          Co-Founder & CPO
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="w-4 sm:w-6 md:w-8 lg:w-12 self-stretch relative overflow-hidden">
+                    {/* Right decorative pattern */}
+                    <div className="w-[120px] sm:w-[140px] md:w-[162px] left-[-40px] sm:left-[-50px] md:left-[-58px] top-[-120px] absolute flex flex-col justify-start items-start">
+                      {Array.from({ length: 100 }).map((_, i) => (
+                        <div
+                          key={i}
+                          className="self-stretch h-3 sm:h-4 rotate-[-45deg] origin-top-left outline outline-[0.5px] outline-[rgba(3,7,18,0.08)] outline-offset-[-0.25px]"
+                        />
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
 
               {/* FAQ Section */}
               <div id="faq-section">
