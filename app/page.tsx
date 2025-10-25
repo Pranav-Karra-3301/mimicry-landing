@@ -28,40 +28,17 @@ function Badge({ icon, text }: { icon: React.ReactNode; text: string }) {
 
 export default function LandingPage() {
   const [activeCard, setActiveCard] = useState(0)
-  const [progress, setProgress] = useState(0)
-  const mountedRef = useRef(true)
 
   useEffect(() => {
-    const progressInterval = setInterval(() => {
-      if (!mountedRef.current) return
+    const interval = setInterval(() => {
+      setActiveCard((prev) => (prev + 1) % 3)
+    }, 5000)
 
-      setProgress((prev) => {
-        if (prev >= 100) {
-          if (mountedRef.current) {
-            setActiveCard((current) => (current + 1) % 3)
-          }
-          return 0
-        }
-        return prev + 2 // 2% every 100ms = 5 seconds total
-      })
-    }, 100)
-
-    return () => {
-      clearInterval(progressInterval)
-      mountedRef.current = false
-    }
-  }, [])
-
-  useEffect(() => {
-    return () => {
-      mountedRef.current = false
-    }
+    return () => clearInterval(interval)
   }, [])
 
   const handleCardClick = (index: number) => {
-    if (!mountedRef.current) return
     setActiveCard(index)
-    setProgress(0)
   }
 
   const getDashboardContent = () => {
@@ -97,23 +74,26 @@ export default function LandingPage() {
                 <div className="flex justify-center items-center">
                   <div className="flex justify-start items-center">
                     <div className="flex flex-col justify-center text-[#2F3037] text-sm sm:text-base md:text-lg lg:text-xl font-medium leading-5 font-sans">
-                      Brillance
+                      Mimicry
                     </div>
                   </div>
                   <div className="pl-3 sm:pl-4 md:pl-5 lg:pl-5 flex justify-start items-start hidden sm:flex flex-row gap-2 sm:gap-3 md:gap-4 lg:gap-4">
                     <div className="flex justify-start items-center">
+                      <a 
+                        href="#faq-section" 
+                        className="flex flex-col justify-center text-[rgba(49,45,43,0.80)] text-xs md:text-[13px] font-medium leading-[14px] font-sans hover:text-[#37322F] transition-colors duration-200 cursor-pointer"
+                      >
+                        How to Play
+                      </a>
+                    </div>
+                    <div className="flex justify-start items-center">
                       <div className="flex flex-col justify-center text-[rgba(49,45,43,0.80)] text-xs md:text-[13px] font-medium leading-[14px] font-sans">
-                        Products
+                        Leaderboard
                       </div>
                     </div>
                     <div className="flex justify-start items-center">
                       <div className="flex flex-col justify-center text-[rgba(49,45,43,0.80)] text-xs md:text-[13px] font-medium leading-[14px] font-sans">
-                        Pricing
-                      </div>
-                    </div>
-                    <div className="flex justify-start items-center">
-                      <div className="flex flex-col justify-center text-[rgba(49,45,43,0.80)] text-xs md:text-[13px] font-medium leading-[14px] font-sans">
-                        Docs
+                        AI Ethics
                       </div>
                     </div>
                   </div>
@@ -133,14 +113,10 @@ export default function LandingPage() {
               <div className="w-full max-w-[937px] lg:w-[937px] flex flex-col justify-center items-center gap-3 sm:gap-4 md:gap-5 lg:gap-6">
                 <div className="self-stretch rounded-[3px] flex flex-col justify-center items-center gap-4 sm:gap-5 md:gap-6 lg:gap-8">
                   <div className="w-full max-w-[748.71px] lg:w-[748.71px] text-center flex justify-center flex-col text-[#37322F] text-[24px] xs:text-[28px] sm:text-[36px] md:text-[52px] lg:text-[80px] font-normal leading-[1.1] sm:leading-[1.15] md:leading-[1.2] lg:leading-24 font-serif px-2 sm:px-4 md:px-0">
-                    Effortless custom contract
-                    <br />
-                    billing by Brillance
+                    SPOT THE AI
                   </div>
                   <div className="w-full max-w-[506.08px] lg:w-[506.08px] text-center flex justify-center flex-col text-[rgba(55,50,47,0.80)] sm:text-lg md:text-xl leading-[1.4] sm:leading-[1.45] md:leading-[1.5] lg:leading-7 font-sans px-2 sm:px-4 md:px-0 lg:text-lg font-medium text-sm">
-                    Streamline your billing process with seamless automation
-                    <br className="hidden sm:block" />
-                    for every custom contract, tailored by Brillance.
+                    Train yourself to detect AI voices in real-time. Build critical thinking skills through competitive gameplay.
                   </div>
                 </div>
               </div>
@@ -150,7 +126,7 @@ export default function LandingPage() {
                   <div className="h-10 sm:h-11 md:h-12 px-6 sm:px-8 md:px-10 lg:px-12 py-2 sm:py-[6px] relative bg-[#37322F] shadow-[0px_0px_0px_2.5px_rgba(255,255,255,0.08)_inset] overflow-hidden rounded-full flex justify-center items-center">
                     <div className="w-20 sm:w-24 md:w-28 lg:w-44 h-[41px] absolute left-0 top-[-0.5px] bg-gradient-to-b from-[rgba(255,255,255,0)] to-[rgba(0,0,0,0.10)] mix-blend-multiply"></div>
                     <div className="flex flex-col justify-center text-white text-sm sm:text-base md:text-[15px] font-medium leading-5 font-sans">
-                      Start for free
+                      Play Now
                     </div>
                   </div>
                 </div>
@@ -168,49 +144,87 @@ export default function LandingPage() {
               </div>
 
               <div className="w-full max-w-[960px] lg:w-[960px] pt-2 sm:pt-4 pb-6 sm:pb-8 md:pb-10 px-2 sm:px-4 md:px-6 lg:px-11 flex flex-col justify-center items-center gap-2 relative z-5 my-8 sm:my-12 md:my-16 lg:my-16 mb-0 lg:pb-0">
-                <div className="w-full max-w-[960px] lg:w-[960px] h-[200px] sm:h-[280px] md:h-[450px] lg:h-[695.55px] bg-white shadow-[0px_0px_0px_0.9056603908538818px_rgba(0,0,0,0.08)] overflow-hidden rounded-[6px] sm:rounded-[8px] lg:rounded-[9.06px] flex flex-col justify-start items-start">
+                <div className="w-full max-w-[960px] lg:w-[960px] h-[200px] sm:h-[280px] md:h-[450px] lg:h-[695.55px] bg-white shadow-[0px_0px_0px_0.9056603908538818px_rgba(0,0,0,0.08)] overflow-hidden rounded-[6px] sm:rounded-[8px] lg:rounded-[9.06px] flex flex-col justify-start items-start relative">
+                  {/* Slideshow Progress Bar */}
+                  <div className="absolute top-0 left-0 right-0 h-1 bg-gray-100 z-10">
+                    <div 
+                      className="h-full bg-gradient-to-r from-blue-500 to-purple-600 transition-all duration-100 ease-linear"
+                      style={{ width: `${activeCard === 0 ? 100 : 0}%` }}
+                    />
+                  </div>
+                  
+                  {/* Slideshow Indicators */}
+                  <div className="absolute top-4 right-4 flex gap-2 z-10">
+                    {[0, 1, 2].map((index) => (
+                      <button
+                        key={index}
+                        onClick={() => handleCardClick(index)}
+                        className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                          activeCard === index 
+                            ? 'bg-blue-600 scale-125' 
+                            : 'bg-gray-300 hover:bg-gray-400'
+                        }`}
+                      />
+                    ))}
+                  </div>
+
                   {/* Dashboard Content */}
                   <div className="self-stretch flex-1 flex justify-start items-start">
                     {/* Main Content */}
                     <div className="w-full h-full flex items-center justify-center">
                       <div className="relative w-full h-full overflow-hidden">
-                        {/* Product Image 1 - Plan your schedules */}
+                        {/* Game Image 1 - Voice Setup Interface */}
                         <div
-                          className={`absolute inset-0 transition-all duration-500 ease-in-out ${
+                          className={`absolute inset-0 transition-all duration-700 ease-in-out ${
                             activeCard === 0 ? "opacity-100 scale-100 blur-0" : "opacity-0 scale-95 blur-sm"
                           }`}
                         >
                           <img
-                            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/dsadsadsa.jpg-xTHS4hGwCWp2H5bTj8np6DXZUyrxX7.jpeg"
-                            alt="Schedules Dashboard - Customer Subscription Management"
+                            src="/modern-dashboard-interface-for-schedule-planning-w.jpg"
+                            alt="Voice Setup Interface - AI Voice Cloning Dashboard"
                             className="w-full h-full object-cover"
                           />
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+                          <div className="absolute bottom-4 left-4 text-white">
+                            <div className="text-sm font-medium">Voice Setup Interface</div>
+                            <div className="text-xs opacity-80">AI Voice Cloning Dashboard</div>
+                          </div>
                         </div>
 
-                        {/* Product Image 2 - Data to insights */}
+                        {/* Game Image 2 - Detection Analytics */}
                         <div
-                          className={`absolute inset-0 transition-all duration-500 ease-in-out ${
+                          className={`absolute inset-0 transition-all duration-700 ease-in-out ${
                             activeCard === 1 ? "opacity-100 scale-100 blur-0" : "opacity-0 scale-95 blur-sm"
                           }`}
                         >
                           <img
                             src="/analytics-dashboard-with-charts-graphs-and-data-vi.jpg"
-                            alt="Analytics Dashboard"
+                            alt="AI Detection Analytics - Real-time Voice Analysis"
                             className="w-full h-full object-cover"
                           />
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+                          <div className="absolute bottom-4 left-4 text-white">
+                            <div className="text-sm font-medium">Detection Analytics</div>
+                            <div className="text-xs opacity-80">Real-time Voice Analysis</div>
+                          </div>
                         </div>
 
-                        {/* Product Image 3 - Data visualization */}
+                        {/* Game Image 3 - Strategic Mind Games */}
                         <div
-                          className={`absolute inset-0 transition-all duration-500 ease-in-out ${
+                          className={`absolute inset-0 transition-all duration-700 ease-in-out ${
                             activeCard === 2 ? "opacity-100 scale-100 blur-0" : "opacity-0 scale-95 blur-sm"
                           }`}
                         >
                           <img
                             src="/data-visualization-dashboard-with-interactive-char.jpg"
-                            alt="Data Visualization Dashboard"
-                            className="w-full h-full object-contain" // Changed from object-cover to object-contain to preserve landscape aspect ratio
+                            alt="Strategic Analysis - Post-Game Breakdown"
+                            className="w-full h-full object-cover"
                           />
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+                          <div className="absolute bottom-4 left-4 text-white">
+                            <div className="text-sm font-medium">Strategic Analysis</div>
+                            <div className="text-xs opacity-80">Post-Game Breakdown</div>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -234,24 +248,24 @@ export default function LandingPage() {
                 <div className="flex-1 px-0 sm:px-2 md:px-0 flex flex-col md:flex-row justify-center items-stretch gap-0">
                   {/* Feature Cards */}
                   <FeatureCard
-                    title="Plan your schedules"
-                    description="Streamline customer subscriptions and billing with automated scheduling tools."
+                    title="Voice Setup"
+                    description="Quick 10-second voice samples to create AI clones. Experience the uncanny valley where human and artificial become indistinguishable."
                     isActive={activeCard === 0}
-                    progress={activeCard === 0 ? progress : 0}
+                    progress={0}
                     onClick={() => handleCardClick(0)}
                   />
                   <FeatureCard
-                    title="Analytics & insights"
-                    description="Transform your business data into actionable insights with real-time analytics."
+                    title="Secret Roles"
+                    description="One player becomes the target, the other the detector. Strategic timing and psychological warfare begin before the AI even speaks."
                     isActive={activeCard === 1}
-                    progress={activeCard === 1 ? progress : 0}
+                    progress={0}
                     onClick={() => handleCardClick(1)}
                   />
                   <FeatureCard
-                    title="Collaborate seamlessly"
-                    description="Keep your team aligned with shared dashboards and collaborative workflows."
+                    title="Mind Games"
+                    description="Train your ear to spot the subtle tells: response delays, breathing patterns, word choices. Every conversation is a masterclass in human behavior."
                     isActive={activeCard === 2}
-                    progress={activeCard === 2 ? progress : 0}
+                    progress={0}
                     onClick={() => handleCardClick(2)}
                   />
                 </div>
@@ -293,12 +307,12 @@ export default function LandingPage() {
                       text="Social Proof"
                     />
                     <div className="w-full max-w-[472.55px] text-center flex justify-center flex-col text-[#49423D] text-xl sm:text-2xl md:text-3xl lg:text-5xl font-semibold leading-tight md:leading-[60px] font-sans tracking-tight">
-                      Confidence backed by results
+                      Powered by industry leaders
                     </div>
                     <div className="self-stretch text-center text-[#605A57] text-sm sm:text-base font-normal leading-6 sm:leading-7 font-sans">
-                      Our customers achieve more each day
+                      Built with cutting-edge AI technology from
                       <br className="hidden sm:block" />
-                      because their tools are simple, powerful, and clear.
+                      the world's most innovative companies.
                     </div>
                   </div>
                 </div>
@@ -306,7 +320,6 @@ export default function LandingPage() {
                 {/* Logo Grid */}
                 <div className="self-stretch border-[rgba(55,50,47,0.12)] flex justify-center items-start border-t border-b-0">
                   <div className="w-4 sm:w-6 md:w-8 lg:w-12 self-stretch relative overflow-hidden">
-                    {/* Left decorative pattern */}
                     <div className="w-[120px] sm:w-[140px] md:w-[162px] left-[-40px] sm:left-[-50px] md:left-[-58px] top-[-120px] absolute flex flex-col justify-start items-start">
                       {Array.from({ length: 50 }).map((_, i) => (
                         <div
@@ -317,16 +330,23 @@ export default function LandingPage() {
                     </div>
                   </div>
 
-                  <div className="flex-1 grid grid-cols-2 sm:grid-cols-4 md:grid-cols-4 gap-0 border-l border-r border-[rgba(55,50,47,0.12)]">
-                    {/* Logo Grid - Responsive grid */}
-                    {Array.from({ length: 8 }).map((_, index) => {
+                  <div className="flex-1 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 gap-0 border-l border-r border-[rgba(55,50,47,0.12)]">
+                    {/* Company logos */}
+                    {[
+                      { name: "Groq", logo: "/groq-logo.ico" },
+                      { name: "LiveKit", logo: "/livekitco_logo.jpeg" },
+                      { name: "Vercel", logo: "/vercel-logo.svg" },
+                      { name: "Supabase", logo: "/supabase-logo.svg" },
+                      { name: "Claude AI", logo: "/claude-logo.ico" },
+                      { name: "ElevenLabs", logo: "/ElevenLabs.jpeg" }
+                    ].map((company, index) => {
                       const isMobileFirstColumn = index % 2 === 0
                       const isMobileLastColumn = index % 2 === 1
-                      const isDesktopFirstColumn = index % 4 === 0
-                      const isDesktopLastColumn = index % 4 === 3
-                      const isMobileBottomRow = index >= 6
-                      const isDesktopTopRow = index < 4
-                      const isDesktopBottomRow = index >= 4
+                      const isDesktopFirstColumn = index % 3 === 0
+                      const isDesktopLastColumn = index % 3 === 2
+                      const isMobileBottomRow = index >= 4
+                      const isDesktopTopRow = index < 3
+                      const isDesktopBottomRow = index >= 3
 
                       return (
                         <div
@@ -334,8 +354,8 @@ export default function LandingPage() {
                           className={`
                             h-24 xs:h-28 sm:h-32 md:h-36 lg:h-40 flex justify-center items-center gap-1 xs:gap-2 sm:gap-3
                             border-b border-[rgba(227,226,225,0.5)]
-                            ${index < 6 ? "sm:border-b-[0.5px]" : "sm:border-b"}
-                            ${index >= 6 ? "border-b" : ""}
+                            ${index < 4 ? "sm:border-b-[0.5px]" : "sm:border-b"}
+                            ${index >= 4 ? "border-b" : ""}
                             ${isMobileFirstColumn ? "border-r-[0.5px]" : ""}
                             sm:border-r-[0.5px] sm:border-l-0
                             ${isDesktopFirstColumn ? "md:border-l" : "md:border-l-[0.5px]"}
@@ -345,11 +365,15 @@ export default function LandingPage() {
                             border-[#E3E2E1]
                           `}
                         >
-                          <div className="w-6 h-6 xs:w-7 xs:h-7 sm:w-8 sm:h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 relative shadow-[0px_-4px_8px_rgba(255,255,255,0.64)_inset] overflow-hidden rounded-full">
-                            <img src="/horizon-icon.svg" alt="Horizon" className="w-full h-full object-contain" />
+                          <div className="w-8 h-8 xs:w-9 xs:h-9 sm:w-10 sm:h-10 md:w-12 md:h-12 lg:w-14 lg:h-14 relative flex items-center justify-center">
+                            <img 
+                              src={company.logo} 
+                              alt={company.name} 
+                              className="w-full h-full object-contain filter grayscale opacity-60 hover:opacity-80 transition-opacity duration-300" 
+                            />
                           </div>
-                          <div className="text-center flex justify-center flex-col text-[#37322F] text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl font-medium leading-tight md:leading-9 font-sans">
-                            Acute
+                          <div className="text-center flex justify-center flex-col text-[#37322F] text-xs xs:text-sm sm:text-base md:text-lg lg:text-xl font-medium leading-tight md:leading-9 font-sans">
+                            {company.name}
                           </div>
                         </div>
                       )
@@ -357,7 +381,6 @@ export default function LandingPage() {
                   </div>
 
                   <div className="w-4 sm:w-6 md:w-8 lg:w-12 self-stretch relative overflow-hidden">
-                    {/* Right decorative pattern */}
                     <div className="w-[120px] sm:w-[140px] md:w-[162px] left-[-40px] sm:left-[-50px] md:left-[-58px] top-[-120px] absolute flex flex-col justify-start items-start">
                       {Array.from({ length: 50 }).map((_, i) => (
                         <div
@@ -387,12 +410,12 @@ export default function LandingPage() {
                       text="Bento grid"
                     />
                     <div className="w-full max-w-[598.06px] lg:w-[598.06px] text-center flex justify-center flex-col text-[#49423D] text-xl sm:text-2xl md:text-3xl lg:text-5xl font-semibold leading-tight md:leading-[60px] font-sans tracking-tight">
-                      Built for absolute clarity and focused work
+                      Master the art of AI detection
                     </div>
                     <div className="self-stretch text-center text-[#605A57] text-sm sm:text-base font-normal leading-6 sm:leading-7 font-sans">
-                      Stay focused with tools that organize, connect
+                      Learn to spot AI-generated content through
                       <br />
-                      and turn information into confident decisions.
+                      strategic gameplay and critical analysis.
                     </div>
                   </div>
                 </div>
@@ -416,10 +439,10 @@ export default function LandingPage() {
                     <div className="border-b border-r-0 md:border-r border-[rgba(55,50,47,0.12)] p-4 sm:p-6 md:p-8 lg:p-12 flex flex-col justify-start items-start gap-4 sm:gap-6">
                       <div className="flex flex-col gap-2">
                         <h3 className="text-[#37322F] text-lg sm:text-xl font-semibold leading-tight font-sans">
-                          Smart. Simple. Brilliant.
+                          AI Voice Cloning
                         </h3>
                         <p className="text-[#605A57] text-sm md:text-base font-normal leading-relaxed font-sans">
-                          Your data is beautifully organized so you see everything clearly without the clutter.
+                          Our proprietary voice synthesis technology leverages advanced machine learning algorithms to create highly accurate voice replicas from minimal audio samples. The system analyzes speech patterns, intonation, and acoustic characteristics to generate synthetic speech that closely mimics human vocal characteristics.
                         </p>
                       </div>
                       <div className="w-full h-[200px] sm:h-[250px] md:h-[300px] rounded-lg flex items-center justify-center overflow-hidden">
@@ -436,10 +459,10 @@ export default function LandingPage() {
                     <div className="border-b border-[rgba(55,50,47,0.12)] p-4 sm:p-6 md:p-8 lg:p-12 flex flex-col justify-start items-start gap-4 sm:gap-6">
                       <div className="flex flex-col gap-2">
                         <h3 className="text-[#37322F] font-semibold leading-tight font-sans text-lg sm:text-xl">
-                          Your work, in sync
+                          Real-time Detection
                         </h3>
                         <p className="text-[#605A57] text-sm md:text-base font-normal leading-relaxed font-sans">
-                          Every update flows instantly across your team and keeps collaboration effortless and fast.
+                          Our real-time detection system employs sophisticated behavioral analysis algorithms to identify subtle patterns that distinguish human speech from AI-generated content. The platform monitors response latency, vocal micro-patterns, and linguistic markers to provide accurate detection capabilities.
                         </p>
                       </div>
                       <div className="w-full h-[200px] sm:h-[250px] md:h-[300px] rounded-lg flex overflow-hidden text-right items-center justify-center">
@@ -456,10 +479,10 @@ export default function LandingPage() {
                     <div className="border-r-0 md:border-r border-[rgba(55,50,47,0.12)] p-4 sm:p-6 md:p-8 lg:p-12 flex flex-col justify-start items-start gap-4 sm:gap-6 bg-transparent">
                       <div className="flex flex-col gap-2">
                         <h3 className="text-[#37322F] text-lg sm:text-xl font-semibold leading-tight font-sans">
-                          Effortless integration
+                          Strategic Mind Games
                         </h3>
                         <p className="text-[#605A57] text-sm md:text-base font-normal leading-relaxed font-sans">
-                          All your favorite tools connect in one place and work together seamlessly by design.
+                          Strategic gameplay mechanics require players to develop sophisticated decision-making frameworks. The system incorporates psychological elements and timing-based challenges that test players' ability to balance risk and opportunity while maintaining optimal performance under pressure.
                         </p>
                       </div>
                       <div className="w-full h-[200px] sm:h-[250px] md:h-[300px] rounded-lg flex overflow-hidden justify-center items-center relative bg-transparent">
@@ -475,10 +498,10 @@ export default function LandingPage() {
                     <div className="p-4 sm:p-6 md:p-8 lg:p-12 flex flex-col justify-start items-start gap-4 sm:gap-6">
                       <div className="flex flex-col gap-2">
                         <h3 className="text-[#37322F] text-lg sm:text-xl font-semibold leading-tight font-sans">
-                          Numbers that speak
+                          Post-Game Analysis
                         </h3>
                         <p className="text-[#605A57] text-sm md:text-base font-normal leading-relaxed font-sans">
-                          Track growth with precision and turn raw data into confident decisions you can trust.
+                          Comprehensive post-game analytics provide detailed insights into performance metrics, behavioral patterns, and strategic effectiveness. Our advanced data visualization tools enable players to analyze response timing, linguistic patterns, and detection accuracy to optimize their gameplay strategies.
                         </p>
                       </div>
                       <div className="w-full h-[200px] sm:h-[250px] md:h-[300px] rounded-lg flex overflow-hidden items-center justify-center relative">
@@ -524,13 +547,15 @@ export default function LandingPage() {
               <TestimonialsSection />
 
               {/* Pricing Section */}
-              <PricingSection />
+              {/* <PricingSection /> */}
 
               {/* FAQ Section */}
-              <FAQSection />
+              <div id="faq-section">
+                <FAQSection />
+              </div>
 
               {/* CTA Section */}
-              <CTASection />
+              {/* <CTASection /> */}
 
               {/* Footer Section */}
               <FooterSection />
