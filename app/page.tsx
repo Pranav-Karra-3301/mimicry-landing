@@ -445,12 +445,11 @@ export default function LandingPage() {
                           Our proprietary voice synthesis technology leverages advanced machine learning algorithms to create highly accurate voice replicas from minimal audio samples. The system analyzes speech patterns, intonation, and acoustic characteristics to generate synthetic speech that closely mimics human vocal characteristics.
                         </p>
                       </div>
-                      <div className="w-full h-[200px] sm:h-[250px] md:h-[300px] rounded-lg flex items-center justify-center overflow-hidden">
-                        <SmartSimpleBrilliant
-                          width="100%"
-                          height="100%"
-                          theme="light"
-                          className="scale-50 sm:scale-65 md:scale-75 lg:scale-90"
+                      <div className="w-full h-[200px] sm:h-[250px] md:h-[300px] rounded-lg overflow-hidden">
+                        <img
+                          src="/Screenshot 2025-10-25 at 9.02.42 AM.png"
+                          alt="Voice setup and training screenshot"
+                          className="w-full h-full object-cover"
                         />
                       </div>
                     </div>
@@ -465,12 +464,11 @@ export default function LandingPage() {
                           Our real-time detection system employs sophisticated behavioral analysis algorithms to identify subtle patterns that distinguish human speech from AI-generated content. The platform monitors response latency, vocal micro-patterns, and linguistic markers to provide accurate detection capabilities.
                         </p>
                       </div>
-                      <div className="w-full h-[200px] sm:h-[250px] md:h-[300px] rounded-lg flex overflow-hidden text-right items-center justify-center">
-                        <YourWorkInSync
-                          width="400"
-                          height="250"
-                          theme="light"
-                          className="scale-60 sm:scale-75 md:scale-90"
+                      <div className="w-full h-[200px] sm:h-[250px] md:h-[300px] rounded-lg overflow-hidden">
+                        <img
+                          src="/pexels-pixabay-257904.jpg"
+                          alt="Real-time detection visual"
+                          className="w-full h-full object-cover"
                         />
                       </div>
                     </div>
@@ -485,10 +483,12 @@ export default function LandingPage() {
                           Strategic gameplay mechanics require players to develop sophisticated decision-making frameworks. The system incorporates psychological elements and timing-based challenges that test players' ability to balance risk and opportunity while maintaining optimal performance under pressure.
                         </p>
                       </div>
-                      <div className="w-full h-[200px] sm:h-[250px] md:h-[300px] rounded-lg flex overflow-hidden justify-center items-center relative bg-transparent">
-                        <div className="w-full h-full flex items-center justify-center bg-transparent">
-                          <EffortlessIntegration width={400} height={250} className="max-w-full max-h-full" />
-                        </div>
+                      <div className="w-full h-[200px] sm:h-[250px] md:h-[300px] rounded-lg overflow-hidden relative bg-transparent">
+                        <img
+                          src="/Screenshot 2025-10-25 at 9.04.44 AM.png"
+                          alt="Strategic mind games visual"
+                          className="w-full h-full object-cover"
+                        />
                         {/* Gradient mask for soft bottom edge */}
                         <div className="absolute bottom-0 left-0 right-0 h-8 bg-gradient-to-t from-[#F7F5F3] to-transparent pointer-events-none"></div>
                       </div>
@@ -504,24 +504,14 @@ export default function LandingPage() {
                           Comprehensive post-game analytics provide detailed insights into performance metrics, behavioral patterns, and strategic effectiveness. Our advanced data visualization tools enable players to analyze response timing, linguistic patterns, and detection accuracy to optimize their gameplay strategies.
                         </p>
                       </div>
-                      <div className="w-full h-[200px] sm:h-[250px] md:h-[300px] rounded-lg flex overflow-hidden items-center justify-center relative">
-                        <div className="absolute inset-0 flex items-center justify-center">
-                          <NumbersThatSpeak
-                            width="100%"
-                            height="100%"
-                            theme="light"
-                            className="w-full h-full object-contain"
-                          />
-                        </div>
+                      <div className="w-full h-[200px] sm:h-[250px] md:h-[300px] rounded-lg overflow-hidden relative">
+                        <img
+                          src="/Screenshot 2025-10-25 at 9.05.44 AM.png"
+                          alt="Post-game analysis visual"
+                          className="w-full h-full object-cover"
+                        />
                         {/* Gradient mask for soft bottom edge */}
                         <div className="absolute bottom-0 left-0 right-0 h-8 bg-gradient-to-t from-[#F7F5F3] to-transparent pointer-events-none"></div>
-                        {/* Fallback content if component doesn't render */}
-                        <div className="absolute inset-0 flex items-center justify-center opacity-20 hidden">
-                          <div className="flex flex-col items-center gap-2 p-4">
-                            <div className="w-3/4 h-full bg-green-500 rounded-full"></div>
-                          </div>
-                          <div className="text-sm text-green-600">Growth Rate</div>
-                        </div>
                       </div>
                     </div>
                   </div>
