@@ -179,7 +179,11 @@ export default function LandingPage() {
             {/* Hero Section */}
             <div className="pt-16 sm:pt-20 md:pt-24 lg:pt-[216px] pb-8 sm:pb-12 md:pb-16 flex flex-col justify-start items-center px-2 sm:px-4 md:px-8 lg:px-0 w-full sm:pl-0 sm:pr-0 pl-0 pr-0">
               <div className="w-full max-w-[937px] lg:w-[937px] flex flex-col justify-center items-center gap-3 sm:gap-4 md:gap-5 lg:gap-6">
-                <img src="/logo.svg" alt="Mimicry Logo" className="w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 mb-6 sm:mb-8 md:mb-10 lg:mb-12 -mt-16 sm:-mt-20 md:-mt-24 lg:-mt-32" />
+                <img
+                  src="/logo.svg"
+                  alt="Mimicry Logo"
+                  className="w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 mb-6 sm:mb-8 md:mb-10 lg:mb-12 mt-6 sm:mt-4 md:-mt-16 lg:-mt-32"
+                />
                 <div className="self-stretch rounded-[3px] flex flex-col justify-center items-center gap-4 sm:gap-5 md:gap-6 lg:gap-8">
                   <div className="w-full max-w-[748.71px] lg:w-[748.71px] text-center flex justify-center flex-col text-[#37322F] text-[24px] xs:text-[28px] sm:text-[36px] md:text-[52px] lg:text-[80px] font-normal leading-[1.1] sm:leading-[1.15] md:leading-[1.2] lg:leading-24 font-serif px-2 sm:px-4 md:px-0">
                     Could you spot the difference between your friend and an AI?
