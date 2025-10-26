@@ -366,7 +366,7 @@ export default function LandingPage() {
                       { name: "LiveKit", logo: "/livekitco_logo.jpeg" },
                       { name: "Claude AI", logo: "/claude-logo.ico" },
                       { name: "Groq", logo: "/groq-logo.ico" },
-                      { name: "DEEPGRAM", logo: "/deepgram.svg" },
+                      { name: "DEEPGRAM", logo: "/Deepgram.svg" },
                       { name: "Supabase", logo: "/supabase-logo.svg" },
                       { name: "ElevenLabs", logo: "/ElevenLabs.jpeg" }
                     ].map((company, index) => {
