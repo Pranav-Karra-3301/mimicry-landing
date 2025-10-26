@@ -9,34 +9,34 @@ interface FAQItem {
 
 const faqData: FAQItem[] = [
   {
-    question: "What is Brillance and who is it for?",
+    question: "What is Mimicry and how does it work?",
     answer:
-      "Brillance is a comprehensive billing automation platform designed for businesses that need custom contract management. It's perfect for SaaS companies, service providers, and enterprises looking to streamline their billing processes.",
+      "Mimicry is an innovative 1v1 competitive platform that combines artificial intelligence with strategic gameplay. Two participants engage in a structured challenge where one player can activate AI voice synthesis technology to replace their speech, while the other player attempts to detect the transition. The platform serves as an educational tool to enhance digital literacy and AI awareness in real-world scenarios.",
   },
   {
-    question: "How does the custom contract billing work?",
+    question: "How does the voice cloning technology work?",
     answer:
-      "Our platform automatically processes your custom contracts, calculates billing amounts based on your specific terms, and generates invoices. You can set up complex pricing structures, usage-based billing, and custom billing cycles.",
+      "Our proprietary voice synthesis system utilizes advanced machine learning algorithms to analyze and replicate human speech patterns from minimal audio samples. The technology processes acoustic characteristics, linguistic patterns, and vocal nuances to generate highly accurate voice replicas. All processing occurs locally on secure infrastructure, ensuring complete data privacy and protection of user information.",
   },
   {
-    question: "Can I integrate Brillance with my existing tools?",
+    question: "Is this platform safe and ethically compliant?",
     answer:
-      "Yes! Brillance integrates seamlessly with popular CRM systems, accounting software, and payment processors. We support APIs and webhooks for custom integrations with your existing workflow.",
+      "Absolutely. Mimicry operates under strict ethical guidelines and is designed exclusively for educational and entertainment purposes. We implement comprehensive consent protocols, provide detailed privacy protections, and include extensive resources on responsible AI usage. The platform promotes awareness of AI capabilities while emphasizing the importance of ethical considerations in artificial intelligence applications.",
   },
   {
-    question: "What kind of support do you provide?",
+    question: "What professional skills can I develop through this platform?",
     answer:
-      "We offer 24/7 customer support, dedicated account managers for enterprise clients, comprehensive documentation, and onboarding assistance to help you get started quickly.",
+      "Participants develop advanced critical thinking capabilities, enhanced pattern recognition skills, and improved analytical reasoning. The platform specifically trains users to identify subtle behavioral indicators, linguistic markers, and temporal patterns that distinguish human communication from AI-generated content. These competencies are increasingly valuable in professional environments where AI interaction is prevalent.",
   },
   {
-    question: "Is my data secure with Brillance?",
+    question: "What multiplayer options are available?",
     answer:
-      "Absolutely. We use enterprise-grade security measures including end-to-end encryption, SOC 2 compliance, and regular security audits. Your data is stored in secure, redundant data centers.",
+      "The platform offers flexible multiplayer configurations including private room creation for controlled environments, intelligent matchmaking systems that pair users with appropriate skill levels, and competitive tournament modes for advanced players. Additionally, we provide comprehensive training modules and practice environments to support skill development and strategic improvement.",
   },
   {
-    question: "How do I get started with Brillance?",
+    question: "How does the performance analysis system work?",
     answer:
-      "Getting started is simple! Sign up for our free trial, connect your existing systems, and our onboarding team will help you set up your first custom billing workflow within 24 hours.",
+      "Our advanced analytics engine provides comprehensive post-game evaluations including detailed performance metrics, behavioral pattern analysis, and strategic effectiveness assessments. The system generates detailed reports on response timing, linguistic analysis, and detection accuracy, enabling users to identify areas for improvement and optimize their strategic approaches for enhanced performance.",
   },
 ]
 
@@ -71,9 +71,9 @@ export default function FAQSection() {
             Frequently Asked Questions
           </div>
           <div className="w-full text-[#605A57] text-base font-normal leading-7 font-sans">
-            Explore your data, build your dashboard,
+            Comprehensive information about our AI voice synthesis platform,
             <br className="hidden md:block" />
-            bring your team together.
+            detection methodologies, and ethical implementation standards.
           </div>
         </div>
 

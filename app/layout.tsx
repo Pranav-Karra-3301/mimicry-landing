@@ -19,10 +19,24 @@ const instrumentSerif = Instrument_Serif({
 })
 
 export const metadata: Metadata = {
-  title: "Brillance - Effortless Custom Contract Billing",
+  title: "mimicry",
   description:
-    "Streamline your billing process with seamless automation for every custom contract, tailored by Brillance.",
-    generator: 'v0.app'
+    "Can you tell the difference between your friend and an AI?",
+  openGraph: {
+    title: "mimicry",
+    description: "Can you tell the difference between your friend and an AI?",
+    images: [
+      {
+        url: "/preview.png",
+        width: 1200,
+        height: 630,
+        alt: "Mimicry - AI Voice Detection Game"
+      }
+    ]
+  },
+  icons: {
+    icon: "/logo.svg"
+  }
 }
 
 export default function RootLayout({

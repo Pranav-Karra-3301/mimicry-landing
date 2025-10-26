@@ -115,19 +115,22 @@ const EffortlessIntegration: React.FC<EffortlessIntegrationProps> = ({ width = 4
             left: `${centerX - 36}px`,
             top: `${centerY - 36}px`,
             position: "absolute",
-            background: "#37322f",
+            background: "transparent",
             boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.15)",
             borderRadius: "99px",
             display: "flex",
             alignItems: "center",
-            justifyContent: "center",
-            fontFamily: "'Inter', sans-serif",
-            fontWeight: 700,
-            fontSize: "32px",
-            color: "#ffffff",
+            justifyContent: "center"
           }}
         >
-          b
+          <img
+            src="logo.svg"
+            alt="Slack"
+            style={{
+              width: "60px",
+              height: "60px",
+            }}
+          />
         </div>
 
         {/* GitHub - 180° (left) */}
@@ -147,7 +150,7 @@ const EffortlessIntegration: React.FC<EffortlessIntegrationProps> = ({ width = 4
           }}
         >
           <img
-            src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/github.svg"
+            src="LK_icon_darkbg.svg"
             alt="GitHub"
             style={{
               width: "18px",
@@ -174,7 +177,7 @@ const EffortlessIntegration: React.FC<EffortlessIntegrationProps> = ({ width = 4
           }}
         >
           <img
-            src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/slack.svg"
+            src="claude-logo.ico"
             alt="Slack"
             style={{
               width: "18px",
@@ -200,7 +203,7 @@ const EffortlessIntegration: React.FC<EffortlessIntegrationProps> = ({ width = 4
           }}
         >
           <img
-            src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/figma.svg"
+            src="groq-logo.ico"
             alt="Figma"
             style={{
               width: "16px",
@@ -226,7 +229,7 @@ const EffortlessIntegration: React.FC<EffortlessIntegrationProps> = ({ width = 4
           }}
         >
           <img
-            src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/discord.svg"
+            src="supabase-logo.svg"
             alt="Discord"
             style={{
               width: "18px",
@@ -253,11 +256,11 @@ const EffortlessIntegration: React.FC<EffortlessIntegrationProps> = ({ width = 4
           }}
         >
           <img
-            src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/notion.svg"
+            src="elevenlabs-logo-black.svg"
             alt="Notion"
             style={{
-              width: "18px",
-              height: "18px",
+              width: "25px",
+              height: "25px",
             }}
           />
         </div>
@@ -279,7 +282,7 @@ const EffortlessIntegration: React.FC<EffortlessIntegrationProps> = ({ width = 4
           }}
         >
           <img
-            src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/stripe.svg"
+            src="vercel-logo.svg"
             alt="Stripe"
             style={{
               width: "18px",
@@ -306,7 +309,7 @@ const EffortlessIntegration: React.FC<EffortlessIntegrationProps> = ({ width = 4
           }}
         >
           <img
-            src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/framer.svg"
+            src="Deepgram.svg"
             alt="Framer"
             style={{
               width: "16px",

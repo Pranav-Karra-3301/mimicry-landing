@@ -21,19 +21,19 @@ export default function DocumentationSection() {
 
   const cards = [
     {
-      title: "Plan your schedules",
-      description: "Explore your data, build your dashboard,\nbring your team together.",
-      image: "/modern-dashboard-interface-with-data-visualization.jpg",
+      title: "Voice Setup & Training",
+      description: "Create AI voice clones in seconds and train your detection skills with real-time feedback.",
+      image: "/cloning.png",
     },
     {
-      title: "Data to insights in minutes",
-      description: "Transform raw data into actionable insights\nwith powerful analytics tools.",
-      image: "/analytics-dashboard.png",
+      title: "Real-time Detection",
+      description: "Spot AI voices instantly with advanced pattern recognition and analysis tools.",
+      image: "/control.png",
     },
     {
-      title: "Collaborate seamlessly",
-      description: "Work together in real-time with your team\nand share insights instantly.",
-      image: "/team-collaboration-interface-with-shared-workspace.jpg",
+      title: "Competitive Challenges",
+      description: "Compete in 1v1 matches and climb the leaderboard with strategic gameplay.",
+      image: "/1v1.png",
     },
   ]
 
@@ -60,15 +60,15 @@ export default function DocumentationSection() {
             icon={
               <div className="w-[10.50px] h-[10.50px] outline outline-[1.17px] outline-[#37322F] outline-offset-[-0.58px] rounded-full"></div>
             }
-            text="Platform Features"
+            text="Game Features"
           />
           <div className="self-stretch text-center flex justify-center flex-col text-[#49423D] text-3xl md:text-5xl font-semibold leading-tight md:leading-[60px] font-sans tracking-tight">
-            Streamline your business operations
+            Master AI voice detection
           </div>
           <div className="self-stretch text-center text-[#605A57] text-base font-normal leading-7 font-sans">
-            Manage schedules, analyze data, and collaborate with your team
+            Train your detection skills, analyze voice patterns, and compete
             <br />
-            all in one powerful platform.
+            in real-time AI voice challenges.
           </div>
         </div>
       </div>
@@ -113,16 +113,16 @@ export default function DocumentationSection() {
           </div>
 
           {/* Right Column - Image */}
-          <div className="w-full md:w-auto rounded-lg flex flex-col justify-center items-center gap-2 order-1 md:order-2 md:px-0 px-[00]">
-            <div className="w-full md:w-[580px] h-[250px] md:h-[420px] bg-white shadow-[0px_0px_0px_0.9056603908538818px_rgba(0,0,0,0.08)] overflow-hidden rounded-lg flex flex-col justify-start items-start">
-              <div
-                className={`w-full h-full transition-all duration-300 ${
-                  activeCard === 0
-                    ? "bg-gradient-to-br from-blue-50 to-blue-100"
-                    : activeCard === 1
-                      ? "bg-gradient-to-br from-purple-50 to-purple-100"
-                      : "bg-gradient-to-br from-green-50 to-green-100"
+          <div className="w-full md:w-auto rounded-lg flex flex-col justify-center items-center gap-2 order-1 md:order-2 md:px-0 px-[00] mx-auto">
+            <div className="w-full md:w-[680px] h-[250px] md:h-[420px] bg-white shadow-[0px_0px_0px_0.9056603908538818px_rgba(0,0,0,0.08)] overflow-hidden rounded-lg flex flex-col justify-start items-start mx-auto">
+              <img
+                key={animationKey}
+                src={cards[activeCard].image}
+                alt={cards[activeCard].title}
+                className={`w-full h-full object-center bg-white ${
+                  activeCard === 0 || activeCard === 2 ? "object-contain" : "object-cover"
                 }`}
+                onContextMenu={(e) => e.preventDefault()}
               />
             </div>
           </div>
