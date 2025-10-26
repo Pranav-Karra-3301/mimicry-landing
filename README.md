@@ -1,3 +1,3 @@
 <p align="center">
-  <img src="public/preview.png" alt="curious?" width="200"/>
+  <img src="public/preview.png" alt="curious?" width="1200"/>
 </p>
