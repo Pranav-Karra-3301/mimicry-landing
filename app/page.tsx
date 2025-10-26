@@ -58,6 +58,48 @@ export default function LandingPage() {
     setActiveCard(index)
   }
 
+  const slides = [
+    {
+      src: "/mimicry_ProfilePage.png",
+      alt: "Player Profile - Track wins, clones, and AI detection accuracy",
+      title: "Player Profile",
+      subtitle: "Track stats, clones, and detection accuracy",
+    },
+    {
+      src: "/mimicry_Lobby.png",
+      alt: "Game Lobby - Share code and invite friends",
+      title: "Game Lobby",
+      subtitle: "Join with code or QR scan",
+    },
+    {
+      src: "/mimicry_gameplay.png",
+      alt: "Active Gameplay - Voice detection and controls in real-time",
+      title: "Active Gameplay",
+      subtitle: "Real-time voice detection and decisions",
+    },
+  ]
+
+  const founders = [
+    {
+      name: "Pranav",
+      image: "/Pranav.png",
+      href: "https://pranavkarra.me",
+      linkLabel: "Website",
+    },
+    {
+      name: "Manit",
+      image: "/Manit.png",
+      href: "https://manitgarg.com/",
+      linkLabel: "Website",
+    },
+    {
+      name: "Binay",
+      image: "/Binay.png",
+      href: "https://www.linkedin.com/in/binay-dalai/",
+      linkLabel: "LinkedIn",
+    },
+  ]
+
   const getDashboardContent = () => {
     switch (activeCard) {
       case 0:
@@ -100,7 +142,7 @@ export default function LandingPage() {
                         href="#faq-section" 
                         className="flex flex-col justify-center text-[rgba(49,45,43,0.80)] text-xs md:text-[13px] font-medium leading-[14px] font-sans hover:text-[#37322F] transition-colors duration-200 cursor-pointer"
                       >
-                        How to Play
+                        FAQ
                       </a>
                     </div>
                     <div className="flex justify-start items-center">
@@ -116,17 +158,20 @@ export default function LandingPage() {
                         href="#testimonials"
                         className="flex flex-col justify-center text-[rgba(49,45,43,0.80)] text-xs md:text-[13px] font-medium leading-[14px] font-sans hover:text-[#37322F] transition-colors duration-200 cursor-pointer"
                       >
-                        Testimonials
+                        Meet the Founders
                       </a>
                     </div>
                   </div>
                 </div>
                 <div className="h-6 sm:h-7 md:h-8 flex justify-start items-start gap-2 sm:gap-3">
-                  <div className="px-2 sm:px-3 md:px-[14px] py-1 sm:py-[6px] bg-white shadow-[0px_1px_2px_rgba(55,50,47,0.12)] overflow-hidden rounded-full flex justify-center items-center">
-                    <div className="flex flex-col justify-center text-[#37322F] text-xs md:text-[13px] font-medium leading-5 font-sans">
+                  <a
+                    href="https://play.mimicry.fun/auth/signin"
+                    className="px-2 sm:px-3 md:px-[14px] py-1 sm:py-[6px] bg-white shadow-[0px_1px_2px_rgba(55,50,47,0.12)] overflow-hidden rounded-full flex justify-center items-center"
+                  >
+                    <span className="flex flex-col justify-center text-[#37322F] text-xs md:text-[13px] font-medium leading-5 font-sans">
                       Log in
-                    </div>
-                  </div>
+                    </span>
+                  </a>
                 </div>
               </div>
             </div>
@@ -146,12 +191,15 @@ export default function LandingPage() {
 
               <div className="w-full max-w-[497px] lg:w-[497px] flex flex-col justify-center items-center gap-6 sm:gap-8 md:gap-10 lg:gap-12 relative z-10 mt-6 sm:mt-8 md:mt-10 lg:mt-12">
                 <div className="backdrop-blur-[8.25px] flex justify-start items-center gap-4">
-                  <div className="h-10 sm:h-11 md:h-12 px-6 sm:px-8 md:px-10 lg:px-12 py-2 sm:py-[6px] relative bg-[#37322F] shadow-[0px_0px_0px_2.5px_rgba(255,255,255,0.08)_inset] overflow-hidden rounded-full flex justify-center items-center">
+                  <a
+                    href="https://play.mimicry.fun"
+                    className="h-10 sm:h-11 md:h-12 px-6 sm:px-8 md:px-10 lg:px-12 py-2 sm:py-[6px] relative bg-[#37322F] shadow-[0px_0px_0px_2.5px_rgba(255,255,255,0.08)_inset] overflow-hidden rounded-full flex justify-center items-center"
+                  >
                     <div className="w-20 sm:w-24 md:w-28 lg:w-44 h-[41px] absolute left-0 top-[-0.5px] bg-gradient-to-b from-[rgba(255,255,255,0)] to-[rgba(0,0,0,0.10)] mix-blend-multiply"></div>
-                    <div className="flex flex-col justify-center text-white text-sm sm:text-base md:text-[15px] font-medium leading-5 font-sans">
+                    <span className="flex flex-col justify-center text-white text-sm sm:text-base md:text-[15px] font-medium leading-5 font-sans">
                       Play Now
-                    </div>
-                  </div>
+                    </span>
+                  </a>
                 </div>
               </div>
 
@@ -189,59 +237,24 @@ export default function LandingPage() {
                     {/* Main Content */}
                     <div className="w-full h-full flex items-center justify-center">
                       <div className="relative w-full h-full overflow-hidden">
-                        {/* Game Image 1 - Room Lobby */}
-                        <div
-                          className={`absolute inset-0 transition-all duration-700 ease-in-out ${
-                            activeCard === 0 ? "opacity-100 scale-100 blur-0" : "opacity-0 scale-95 blur-sm"
-                          }`}
-                        >
-                          <img
-                            src="/mimicry_Lobby.png"
-                            alt="Game Lobby - Share code and invite friends"
-                            className="w-full h-full object-contain bg-[#F7F5F3]"
-                          />
-                          <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
-                          <div className="absolute bottom-4 left-4 text-white">
-                            <div className="text-sm font-medium">Game Lobby</div>
-                            <div className="text-xs opacity-80">Join with code or QR scan</div>
+                        {slides.map((slide, index) => (
+                          <div
+                            key={slide.title}
+                            className={`absolute inset-0 transition-all duration-700 ease-in-out ${
+                              activeCard === index ? "opacity-100 scale-100 blur-0" : "opacity-0 scale-95 blur-sm"
+                            }`}
+                          >
+                            <div className="flex h-full w-full flex-col">
+                              <div className="flex-1 bg-[#F7F5F3] flex items-center justify-center">
+                                <img src={slide.src} alt={slide.alt} className="w-full h-full object-contain" />
+                              </div>
+                              <div className="px-4 py-3 text-[#37322F]">
+                                <div className="text-sm sm:text-base font-medium leading-5">{slide.title}</div>
+                                <div className="text-xs sm:text-sm text-[#605A57] opacity-80">{slide.subtitle}</div>
+                              </div>
+                            </div>
                           </div>
-                        </div>
-
-                        {/* Game Image 2 - Active Gameplay */}
-                        <div
-                          className={`absolute inset-0 transition-all duration-700 ease-in-out ${
-                            activeCard === 1 ? "opacity-100 scale-100 blur-0" : "opacity-0 scale-95 blur-sm"
-                          }`}
-                        >
-                          <img
-                            src="/mimicry_gamescreen.png"
-                            alt="Active Gameplay - Voice detection and controls in real-time"
-                            className="w-full h-full object-contain bg-[#F7F5F3]"
-                          />
-                          <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
-                          <div className="absolute bottom-4 left-4 text-white">
-                            <div className="text-sm font-medium">Active Gameplay</div>
-                            <div className="text-xs opacity-80">Real-time voice detection and decisions</div>
-                          </div>
-                        </div>
-
-                        {/* Game Image 3 - Profile & Stats */}
-                        <div
-                          className={`absolute inset-0 transition-all duration-700 ease-in-out ${
-                            activeCard === 2 ? "opacity-100 scale-100 blur-0" : "opacity-0 scale-95 blur-sm"
-                          }`}
-                        >
-                          <img
-                            src="/mimicry_ProfilePage.png"
-                            alt="Player Profile - Track wins, clones, and AI detection accuracy"
-                            className="w-full h-full object-contain bg-[#F7F5F3]"
-                          />
-                          <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
-                          <div className="absolute bottom-4 left-4 text-white">
-                            <div className="text-sm font-medium">Player Profile</div>
-                            <div className="text-xs opacity-80">Track stats, clones, and detection accuracy</div>
-                          </div>
-                        </div>
+                        ))}
                       </div>
                     </div>
                   </div>
@@ -349,11 +362,11 @@ export default function LandingPage() {
                   <div className="flex-1 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 gap-0 border-l border-r border-[rgba(55,50,47,0.12)]">
                     {/* Company logos */}
                     {[
-                      { name: "Groq", logo: "/groq-logo.ico" },
                       { name: "LiveKit", logo: "/livekitco_logo.jpeg" },
-                      { name: "Vercel", logo: "/vercel-logo.svg" },
-                      { name: "Supabase", logo: "/supabase-logo.svg" },
                       { name: "Claude AI", logo: "/claude-logo.ico" },
+                      { name: "Groq", logo: "/groq-logo.ico" },
+                      { name: "DEEPGRAM", logo: "/deepgram.svg" },
+                      { name: "Supabase", logo: "/supabase-logo.svg" },
                       { name: "ElevenLabs", logo: "/ElevenLabs.jpeg" }
                     ].map((company, index) => {
                       const isMobileFirstColumn = index % 2 === 0
@@ -451,60 +464,60 @@ export default function LandingPage() {
                   </div>
 
                   <div className="flex-1 grid grid-cols-1 md:grid-cols-2 gap-0 border-l border-r border-[rgba(55,50,47,0.12)]">
-                    {/* Top Left - AI Voice Cloning */}
+                    {/* Top Left - Smart. Simple. Brilliant. */}
                     <div className="border-b border-r-0 md:border-r border-[rgba(55,50,47,0.12)] p-4 sm:p-6 md:p-8 lg:p-12 flex flex-col justify-start items-start gap-4 sm:gap-6">
                       <div className="flex flex-col gap-2">
                         <h3 className="text-[#37322F] text-lg sm:text-xl font-semibold leading-tight font-sans">
-                          AI Voice Cloning
+                        Effortless Overview
                         </h3>
                         <p className="text-[#605A57] text-sm md:text-base font-normal leading-relaxed font-sans">
-                          Create your AI clone in seconds. Set up your voice profile with just 10 seconds of audio, configure your ElevenLabs persona, and prepare to enter the game. The system learns your vocal patterns to generate realistic voice responses.
+                        See everything at a glance. Your recordings, transcripts, and analytics are presented clearly so you always know what’s going on.
                         </p>
                       </div>
-                      <div className="w-full h-[200px] sm:h-[250px] md:h-[300px] rounded-lg overflow-hidden bg-[#F7F5F3] border border-[rgba(55,50,47,0.1)] shadow-sm">
-                        <img
-                          src="/mimicry_ProfilePage.png"
-                          alt="Profile page showing voice setup and configuration"
-                          className="w-full h-full object-contain"
+                      <div className="w-full h-[200px] sm:h-[250px] md:h-[300px] rounded-lg flex items-center justify-center overflow-hidden">
+                        <SmartSimpleBrilliant
+                          width="100%"
+                          height="100%"
+                          theme="light"
+                          className="scale-50 sm:scale-65 md:scale-75 lg:scale-90"
                         />
                       </div>
                     </div>
 
-                    {/* Top Right - Real-time Detection */}
+                    {/* Top Right - Your work, in sync */}
                     <div className="border-b border-[rgba(55,50,47,0.12)] p-4 sm:p-6 md:p-8 lg:p-12 flex flex-col justify-start items-start gap-4 sm:gap-6">
                       <div className="flex flex-col gap-2">
                         <h3 className="text-[#37322F] font-semibold leading-tight font-sans text-lg sm:text-xl">
-                          Real-time Detection
+                          Realtime Transcription
                         </h3>
                         <p className="text-[#605A57] text-sm md:text-base font-normal leading-relaxed font-sans">
-                          Spot the AI in real-time. Listen to conversations, watch for telltale signs, and make your guess. Monitor response delays, breathing patterns, and vocal nuances. Every decision counts as you compete against other players to identify the AI persona before they reveal themselves.
+                        No waiting or replaying. Everything said in the game is transcribed the moment it happens, helping you stay present and focused on what’s being said.
                         </p>
                       </div>
-                      <div className="w-full h-[200px] sm:h-[250px] md:h-[300px] rounded-lg overflow-hidden bg-[#F7F5F3] border border-[rgba(55,50,47,0.1)] shadow-sm">
-                        <img
-                          src="/mimicry_gamescreen.png"
-                          alt="Active gameplay screen with voice detection controls"
-                          className="w-full h-full object-contain"
-                        />
+                      <div className="w-full h-[200px] sm:h-[250px] md:h-[300px] rounded-lg flex overflow-hidden text-right items-center justify-center">
+                        <YourWorkInSync
+                          width="400"
+                          height="250"
+                          theme="light"
+                          className="scale-60 sm:scale-75 md:scale-90"
+                        /> 
                       </div>
                     </div>
 
-                    {/* Bottom Left - Strategic Mind Games */}
+                    {/* Bottom Left - Effortless integration */}
                     <div className="border-r-0 md:border-r border-[rgba(55,50,47,0.12)] p-4 sm:p-6 md:p-8 lg:p-12 flex flex-col justify-start items-start gap-4 sm:gap-6 bg-transparent">
                       <div className="flex flex-col gap-2">
                         <h3 className="text-[#37322F] text-lg sm:text-xl font-semibold leading-tight font-sans">
-                          Strategic Mind Games
+                          Power Stack
                         </h3>
                         <p className="text-[#605A57] text-sm md:text-base font-normal leading-relaxed font-sans">
-                          Join rooms with friends or strangers and compete to spot the AI. One player becomes the target, another the detector. Roles assign automatically. Compete in real-time as the AI persona takes over and engages in psychological gameplay. Win by correctly identifying or fooling others with perfect deception.
+                        Everything that makes Mimicry possible comes together here. Your favorite creative tools work side by side, sharing data and keeping your workflow smooth from start to finish.
                         </p>
                       </div>
-                      <div className="w-full h-[200px] sm:h-[250px] md:h-[300px] rounded-lg overflow-hidden relative bg-[#F7F5F3] border border-[rgba(55,50,47,0.1)] shadow-sm">
-                        <img
-                          src="/mimicry_Lobby.png"
-                          alt="Game lobby with room code and player list"
-                          className="w-full h-full object-contain"
-                        />
+                      <div className="w-full h-[200px] sm:h-[250px] md:h-[300px] rounded-lg flex overflow-hidden justify-center items-center relative bg-transparent">
+                        <div className="w-full h-full flex items-center justify-center bg-transparent">
+                          <EffortlessIntegration width={400} height={250} className="max-w-full max-h-full" />
+                        </div>
                         {/* Gradient mask for soft bottom edge */}
                         <div className="absolute bottom-0 left-0 right-0 h-8 bg-gradient-to-t from-[#F7F5F3] to-transparent pointer-events-none"></div>
                       </div>
@@ -613,59 +626,40 @@ export default function LandingPage() {
 
                   <div className="flex-1 px-0 sm:px-2 md:px-0 flex flex-col md:flex-row justify-center items-stretch gap-0">
                     {/* Founder Cards */}
-                    <div className="w-full md:flex-1 self-stretch px-6 py-8 overflow-hidden flex flex-col justify-center items-center gap-4 border-b md:border-b-0 md:border-r border-[#E0DEDB]/80">
-                      <div className="w-24 h-24 rounded-full overflow-hidden shadow-lg">
-                        <img
-                          src="/Pranav.png"
-                          alt="Pranav"
-                          className="w-full h-full object-cover"
-                        />
-                      </div>
-                      <div className="text-center">
-                        <div className="text-[#49423D] text-lg font-semibold leading-6 font-sans">
-                          Pranav
+                    {founders.map((founder, index) => {
+                      const isLast = index === founders.length - 1
+                      const borderClasses = !isLast ? "border-b md:border-b-0 md:border-r border-[#E0DEDB]/80" : ""
+                      return (
+                        <div
+                          key={founder.name}
+                          className={`w-full md:flex-1 self-stretch px-6 py-8 overflow-hidden flex flex-col justify-center items-center gap-4 ${borderClasses}`}
+                        >
+                          <div className="w-24 h-24 rounded-full overflow-hidden shadow-lg">
+                            <img src={founder.image} alt={founder.name} className="w-full h-full object-cover" />
+                          </div>
+                          <div className="text-center flex flex-col items-center gap-2">
+                            <div className="text-[#49423D] text-lg font-semibold leading-6 font-sans">{founder.name}</div>
+                            <a
+                              href={founder.href}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="text-[#2563EB] text-sm font-medium leading-5 font-sans inline-flex items-center gap-1 hover:text-[#1d4ed8] transition-colors"
+                            >
+                              Visit {founder.linkLabel}
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 20 20"
+                                fill="currentColor"
+                                className="w-4 h-4"
+                                aria-hidden="true"
+                              >
+                                <path d="M5 10a.75.75 0 0 1 .75-.75h5.69L9.22 7.03a.75.75 0 1 1 1.06-1.06l3.5 3.5a.75.75 0 0 1 0 1.06l-3.5 3.5a.75.75 0 0 1-1.06-1.06l2.22-2.22H5.75A.75.75 0 0 1 5 10Z" />
+                              </svg>
+                            </a>
+                          </div>
                         </div>
-                        <div className="text-[#605A57] text-sm font-normal leading-5 font-sans">
-                          Co-Founder & CEO
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="w-full md:flex-1 self-stretch px-6 py-8 overflow-hidden flex flex-col justify-center items-center gap-4 border-b md:border-b-0 md:border-r border-[#E0DEDB]/80">
-                      <div className="w-24 h-24 rounded-full overflow-hidden shadow-lg">
-                        <img
-                          src="/Manit.png"
-                          alt="Manit"
-                          className="w-full h-full object-cover"
-                        />
-                      </div>
-                      <div className="text-center">
-                        <div className="text-[#49423D] text-lg font-semibold leading-6 font-sans">
-                          Manit
-                        </div>
-                        <div className="text-[#605A57] text-sm font-normal leading-5 font-sans">
-                          Co-Founder & CTO
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="w-full md:flex-1 self-stretch px-6 py-8 overflow-hidden flex flex-col justify-center items-center gap-4">
-                      <div className="w-24 h-24 rounded-full overflow-hidden shadow-lg">
-                        <img
-                          src="/Binay.png"
-                          alt="Binay"
-                          className="w-full h-full object-cover"
-                        />
-                      </div>
-                      <div className="text-center">
-                        <div className="text-[#49423D] text-lg font-semibold leading-6 font-sans">
-                          Binay
-                        </div>
-                        <div className="text-[#605A57] text-sm font-normal leading-5 font-sans">
-                          Co-Founder & CPO
-                        </div>
-                      </div>
-                    </div>
+                      )
+                    })}
                   </div>
 
                   <div className="w-4 sm:w-6 md:w-8 lg:w-12 self-stretch relative overflow-hidden">

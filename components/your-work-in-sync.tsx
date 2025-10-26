@@ -47,12 +47,10 @@ const YourWorkInSync: React.FC<YourWorkInSyncProps> = ({
         } as React.CSSProperties)
 
   // Figma-exported assets
-  const imgFrame2147223205 = "/professional-woman-avatar-with-short-brown-hair-an.jpg"
-  const imgFrame2147223206 = "/professional-man-avatar-with-beard-and-glasses-loo.jpg"
+  const imgFrame2147223205 = "/Manit.png"
+  const imgFrame2147223206 = "/Pranav.png"
   const imgFrame2147223207 = "/professional-person-avatar-with-curly-hair-and-war.jpg"
-  const imgArrowUp =
-    "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' strokeWidth='3' strokeLinecap='round' strokeLinejoin='round'%3E%3Cpath d='m5 12 7-7 7 7'/%3E%3Cpath d='M12 19V5'/%3E%3C/svg%3E"
-
+  
   return (
     <div
       className={className}
@@ -130,7 +128,7 @@ const YourWorkInSync: React.FC<YourWorkInSyncProps> = ({
                   whiteSpace: "nowrap",
                 }}
               >
-                Team updates flow seamlessly
+                So how are you doing Pranav?
               </span>
             </div>
           </div>
@@ -170,7 +168,7 @@ const YourWorkInSync: React.FC<YourWorkInSyncProps> = ({
                   whiteSpace: "nowrap",
                 }}
               >
-                Hi everyone
+                I'm doing great, what about you?
               </span>
             </div>
             {/* Avatar */}
@@ -207,7 +205,7 @@ const YourWorkInSync: React.FC<YourWorkInSyncProps> = ({
                 width: "36px",
                 height: "36px",
                 borderRadius: "44px",
-                backgroundImage: `url('${imgFrame2147223207}')`,
+                backgroundImage: `url('${imgFrame2147223205}')`,
                 backgroundSize: "cover",
                 backgroundPosition: "center",
                 border: "1px solid var(--yws-border)",
@@ -237,79 +235,66 @@ const YourWorkInSync: React.FC<YourWorkInSyncProps> = ({
                   whiteSpace: "nowrap",
                 }}
               >
-                How about this instead?
+                I'm doing great as well. So hows your week going?
               </span>
             </div>
           </div>
 
-          {/* Message 4: Center with send button */}
+          {/* Message 4: Right side follow-up */}
           <div
             style={{
               position: "absolute",
-              left: "146px",
+              right: "0px",
               top: "180px",
               display: "flex",
               gap: "10px",
-              alignItems: "center",
-              height: "36px",
+              alignItems: "flex-start",
+              justifyContent: "flex-end",
             }}
           >
             {/* Message bubble */}
             <div
               style={{
-                background: "#ffffff",
-                borderRadius: "16px",
+                background: theme === "light" ? "#37322f" : "var(--yws-bubble-dark)",
+                borderRadius: "999px",
                 padding: "0px 12px",
                 height: "36px",
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
-                boxShadow: "0px 0px 0px 1px rgba(0,0,0,0.08), 0px 1px 2px -0.4px rgba(0,0,0,0.08)",
-                overflow: "hidden",
               }}
             >
               <span
                 style={{
                   fontFamily: "Inter, sans-serif",
-                  fontWeight: 400,
-                  fontSize: "14px",
-                  lineHeight: "20px",
-                  color: "#030712",
+                  fontWeight: 500,
+                  fontSize: "13px",
+                  lineHeight: "16px",
+                  letterSpacing: "-0.4px",
+                  color: "#ffffff",
                   whiteSpace: "nowrap",
                 }}
               >
-                Great work, everyone!
+                Not Great, missed most of my classes.
               </span>
             </div>
-            {/* Send button */}
+            {/* Avatar */}
             <div
               style={{
                 width: "36px",
                 height: "36px",
                 borderRadius: "44px",
-                background: theme === "light" ? "#37322f" : "var(--yws-bubble-dark)",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                boxShadow: "0px 1px 2px 0px rgba(0,0,0,0.08)",
-                cursor: "pointer",
+                backgroundImage: `url('${imgFrame2147223206}')`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+                border: "1px solid var(--yws-border)",
                 flexShrink: 0,
               }}
-            >
-              <img
-                src={imgArrowUp || "/placeholder.svg"}
-                alt="Send"
-                style={{
-                  width: "20px",
-                  height: "20px",
-                  filter: "brightness(0) invert(1)",
-                }}
-              />
-            </div>
+            />
+          </div>
           </div>
         </div>
       </div>
-    </div>
   )
 }
 
