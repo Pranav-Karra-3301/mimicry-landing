@@ -189,57 +189,57 @@ export default function LandingPage() {
                     {/* Main Content */}
                     <div className="w-full h-full flex items-center justify-center">
                       <div className="relative w-full h-full overflow-hidden">
-                        {/* Game Image 1 - Voice Setup Interface */}
+                        {/* Game Image 1 - Room Lobby */}
                         <div
                           className={`absolute inset-0 transition-all duration-700 ease-in-out ${
                             activeCard === 0 ? "opacity-100 scale-100 blur-0" : "opacity-0 scale-95 blur-sm"
                           }`}
                         >
                           <img
-                            src="/modern-dashboard-interface-for-schedule-planning-w.jpg"
-                            alt="Voice Setup Interface - AI Voice Cloning Dashboard"
-                            className="w-full h-full object-cover"
+                            src="/mimicry_Lobby.png"
+                            alt="Game Lobby - Share code and invite friends"
+                            className="w-full h-full object-contain bg-[#F7F5F3]"
                           />
                           <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
                           <div className="absolute bottom-4 left-4 text-white">
-                            <div className="text-sm font-medium">Voice Setup Interface</div>
-                            <div className="text-xs opacity-80">AI Voice Cloning Dashboard</div>
+                            <div className="text-sm font-medium">Game Lobby</div>
+                            <div className="text-xs opacity-80">Join with code or QR scan</div>
                           </div>
                         </div>
 
-                        {/* Game Image 2 - Detection Analytics */}
+                        {/* Game Image 2 - Active Gameplay */}
                         <div
                           className={`absolute inset-0 transition-all duration-700 ease-in-out ${
                             activeCard === 1 ? "opacity-100 scale-100 blur-0" : "opacity-0 scale-95 blur-sm"
                           }`}
                         >
                           <img
-                            src="/analytics-dashboard-with-charts-graphs-and-data-vi.jpg"
-                            alt="AI Detection Analytics - Real-time Voice Analysis"
-                            className="w-full h-full object-cover"
+                            src="/mimicry_gamescreen.png"
+                            alt="Active Gameplay - Voice detection and controls in real-time"
+                            className="w-full h-full object-contain bg-[#F7F5F3]"
                           />
                           <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
                           <div className="absolute bottom-4 left-4 text-white">
-                            <div className="text-sm font-medium">Detection Analytics</div>
-                            <div className="text-xs opacity-80">Real-time Voice Analysis</div>
+                            <div className="text-sm font-medium">Active Gameplay</div>
+                            <div className="text-xs opacity-80">Real-time voice detection and decisions</div>
                           </div>
                         </div>
 
-                        {/* Game Image 3 - Strategic Mind Games */}
+                        {/* Game Image 3 - Profile & Stats */}
                         <div
                           className={`absolute inset-0 transition-all duration-700 ease-in-out ${
                             activeCard === 2 ? "opacity-100 scale-100 blur-0" : "opacity-0 scale-95 blur-sm"
                           }`}
                         >
                           <img
-                            src="/data-visualization-dashboard-with-interactive-char.jpg"
-                            alt="Strategic Analysis - Post-Game Breakdown"
-                            className="w-full h-full object-cover"
+                            src="/mimicry_ProfilePage.png"
+                            alt="Player Profile - Track wins, clones, and AI detection accuracy"
+                            className="w-full h-full object-contain bg-[#F7F5F3]"
                           />
                           <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
                           <div className="absolute bottom-4 left-4 text-white">
-                            <div className="text-sm font-medium">Strategic Analysis</div>
-                            <div className="text-xs opacity-80">Post-Game Breakdown</div>
+                            <div className="text-sm font-medium">Player Profile</div>
+                            <div className="text-xs opacity-80">Track stats, clones, and detection accuracy</div>
                           </div>
                         </div>
                       </div>
@@ -451,80 +451,80 @@ export default function LandingPage() {
                   </div>
 
                   <div className="flex-1 grid grid-cols-1 md:grid-cols-2 gap-0 border-l border-r border-[rgba(55,50,47,0.12)]">
-                    {/* Top Left - Smart. Simple. Brilliant. */}
+                    {/* Top Left - AI Voice Cloning */}
                     <div className="border-b border-r-0 md:border-r border-[rgba(55,50,47,0.12)] p-4 sm:p-6 md:p-8 lg:p-12 flex flex-col justify-start items-start gap-4 sm:gap-6">
                       <div className="flex flex-col gap-2">
                         <h3 className="text-[#37322F] text-lg sm:text-xl font-semibold leading-tight font-sans">
                           AI Voice Cloning
                         </h3>
                         <p className="text-[#605A57] text-sm md:text-base font-normal leading-relaxed font-sans">
-                          Our proprietary voice synthesis technology leverages advanced machine learning algorithms to create highly accurate voice replicas from minimal audio samples. The system analyzes speech patterns, intonation, and acoustic characteristics to generate synthetic speech that closely mimics human vocal characteristics.
+                          Create your AI clone in seconds. Set up your voice profile with just 10 seconds of audio, configure your ElevenLabs persona, and prepare to enter the game. The system learns your vocal patterns to generate realistic voice responses.
                         </p>
                       </div>
-                      <div className="w-full h-[200px] sm:h-[250px] md:h-[300px] rounded-lg overflow-hidden">
+                      <div className="w-full h-[200px] sm:h-[250px] md:h-[300px] rounded-lg overflow-hidden bg-[#F7F5F3] border border-[rgba(55,50,47,0.1)] shadow-sm">
                         <img
-                          src="/Clone yourself.jpeg"
-                          alt="Voice setup and training screenshot"
-                          className="w-full h-full object-cover"
+                          src="/mimicry_ProfilePage.png"
+                          alt="Profile page showing voice setup and configuration"
+                          className="w-full h-full object-contain"
                         />
                       </div>
                     </div>
 
-                    {/* Top Right - Your work, in sync */}
+                    {/* Top Right - Real-time Detection */}
                     <div className="border-b border-[rgba(55,50,47,0.12)] p-4 sm:p-6 md:p-8 lg:p-12 flex flex-col justify-start items-start gap-4 sm:gap-6">
                       <div className="flex flex-col gap-2">
                         <h3 className="text-[#37322F] font-semibold leading-tight font-sans text-lg sm:text-xl">
                           Real-time Detection
                         </h3>
                         <p className="text-[#605A57] text-sm md:text-base font-normal leading-relaxed font-sans">
-                          Our real-time detection system employs sophisticated behavioral analysis algorithms to identify subtle patterns that distinguish human speech from AI-generated content. The platform monitors response latency, vocal micro-patterns, and linguistic markers to provide accurate detection capabilities.
+                          Spot the AI in real-time. Listen to conversations, watch for telltale signs, and make your guess. Monitor response delays, breathing patterns, and vocal nuances. Every decision counts as you compete against other players to identify the AI persona before they reveal themselves.
                         </p>
                       </div>
-                      <div className="w-full h-[200px] sm:h-[250px] md:h-[300px] rounded-lg overflow-hidden">
+                      <div className="w-full h-[200px] sm:h-[250px] md:h-[300px] rounded-lg overflow-hidden bg-[#F7F5F3] border border-[rgba(55,50,47,0.1)] shadow-sm">
                         <img
-                          src="/adb9887a-729f-4f1c-a350-b130c1f0c634.jpeg"
-                          alt="Real-time detection visual"
-                          className="w-full h-full object-cover"
+                          src="/mimicry_gamescreen.png"
+                          alt="Active gameplay screen with voice detection controls"
+                          className="w-full h-full object-contain"
                         />
                       </div>
                     </div>
 
-                    {/* Bottom Left - Effortless integration */}
+                    {/* Bottom Left - Strategic Mind Games */}
                     <div className="border-r-0 md:border-r border-[rgba(55,50,47,0.12)] p-4 sm:p-6 md:p-8 lg:p-12 flex flex-col justify-start items-start gap-4 sm:gap-6 bg-transparent">
                       <div className="flex flex-col gap-2">
                         <h3 className="text-[#37322F] text-lg sm:text-xl font-semibold leading-tight font-sans">
                           Strategic Mind Games
                         </h3>
                         <p className="text-[#605A57] text-sm md:text-base font-normal leading-relaxed font-sans">
-                          Strategic gameplay mechanics require players to develop sophisticated decision-making frameworks. The system incorporates psychological elements and timing-based challenges that test players' ability to balance risk and opportunity while maintaining optimal performance under pressure.
+                          Join rooms with friends or strangers and compete to spot the AI. One player becomes the target, another the detector. Roles assign automatically. Compete in real-time as the AI persona takes over and engages in psychological gameplay. Win by correctly identifying or fooling others with perfect deception.
                         </p>
                       </div>
-                      <div className="w-full h-[200px] sm:h-[250px] md:h-[300px] rounded-lg overflow-hidden relative">
+                      <div className="w-full h-[200px] sm:h-[250px] md:h-[300px] rounded-lg overflow-hidden relative bg-[#F7F5F3] border border-[rgba(55,50,47,0.1)] shadow-sm">
                         <img
-                          src="/_.jpeg"
-                          alt="Strategic mind games visual"
-                          className="w-full h-full object-cover"
+                          src="/mimicry_Lobby.png"
+                          alt="Game lobby with room code and player list"
+                          className="w-full h-full object-contain"
                         />
                         {/* Gradient mask for soft bottom edge */}
                         <div className="absolute bottom-0 left-0 right-0 h-8 bg-gradient-to-t from-[#F7F5F3] to-transparent pointer-events-none"></div>
                       </div>
                     </div>
 
-                    {/* Bottom Right - Numbers that speak */}
+                    {/* Bottom Right - Post-Game Analysis */}
                     <div className="p-4 sm:p-6 md:p-8 lg:p-12 flex flex-col justify-start items-start gap-4 sm:gap-6">
                       <div className="flex flex-col gap-2">
                         <h3 className="text-[#37322F] text-lg sm:text-xl font-semibold leading-tight font-sans">
                           Post-Game Analysis
                         </h3>
                         <p className="text-[#605A57] text-sm md:text-base font-normal leading-relaxed font-sans">
-                          Comprehensive post-game analytics provide detailed insights into performance metrics, behavioral patterns, and strategic effectiveness. Our advanced data visualization tools enable players to analyze response timing, linguistic patterns, and detection accuracy to optimize their gameplay strategies.
+                          Review your performance after every round. Analyze detection accuracy, response patterns, and strategic decisions. Track your progress over time with detailed stats on wins, AI takeovers, and detection accuracy. Learn what clues gave away the AI and improve your skills for the next showdown.
                         </p>
                       </div>
-                      <div className="w-full h-[200px] sm:h-[250px] md:h-[300px] rounded-lg overflow-hidden relative">
+                      <div className="w-full h-[200px] sm:h-[250px] md:h-[300px] rounded-lg overflow-hidden relative bg-[#F7F5F3] border border-[rgba(55,50,47,0.1)] shadow-sm">
                         <img
-                          src="/b9ef8ff06d54f46a83b93a99bf197f7b.jpg"
-                          alt="Post-game analysis visual"
-                          className="w-full h-full object-cover"
+                          src="/mimicry_ProfilePage.png"
+                          alt="Profile page with game statistics and performance history"
+                          className="w-full h-full object-contain"
                         />
                         {/* Gradient mask for soft bottom edge */}
                         <div className="absolute bottom-0 left-0 right-0 h-8 bg-gradient-to-t from-[#F7F5F3] to-transparent pointer-events-none"></div>
