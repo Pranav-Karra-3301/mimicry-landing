@@ -23,17 +23,17 @@ export default function DocumentationSection() {
     {
       title: "Voice Setup & Training",
       description: "Create AI voice clones in seconds and train your detection skills with real-time feedback.",
-      image: "/VOICE.png",
+      image: "/cloning.png",
     },
     {
       title: "Real-time Detection",
       description: "Spot AI voices instantly with advanced pattern recognition and analysis tools.",
-      image: "/556989d3-dbdf-470e-81f0-04afa0674aa9.jpeg",
+      image: "/control.png",
     },
     {
       title: "Competitive Challenges",
       description: "Compete in 1v1 matches and climb the leaderboard with strategic gameplay.",
-      image: "/Screenshot 2025-10-25 at 10.10.15 AM.png",
+      image: "/1v1.png",
     },
   ]
 
@@ -122,6 +122,7 @@ export default function DocumentationSection() {
                 className={`w-full h-full object-center bg-white ${
                   activeCard === 0 || activeCard === 2 ? "object-contain" : "object-cover"
                 }`}
+                onContextMenu={(e) => e.preventDefault()}
               />
             </div>
           </div>
