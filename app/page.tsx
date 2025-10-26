@@ -8,7 +8,6 @@ import YourWorkInSync from "../components/your-work-in-sync"
 import EffortlessIntegration from "../components/effortless-integration-updated"
 import NumbersThatSpeak from "../components/numbers-that-speak"
 import DocumentationSection from "../components/documentation-section"
-import TestimonialsSection from "../components/testimonials-section"
 import FAQSection from "../components/faq-section"
 import CTASection from "../components/cta-section"
 import FooterSection from "../components/footer-section"
@@ -552,13 +551,8 @@ export default function LandingPage() {
                 <DocumentationSection />
               </div>
 
-              {/* Testimonials Section */}
-              <div id="testimonials">
-                <TestimonialsSection />
-              </div>
-
-              {/* Founders Section */}
-              <div className="w-full border-b border-[rgba(55,50,47,0.12)] flex flex-col justify-center items-center">
+              {/* Founders Section with ASCII Art */}
+              <div id="testimonials" className="w-full border-b border-[rgba(55,50,47,0.12)] flex flex-col justify-center items-center">
                 <div className="self-stretch px-4 sm:px-6 md:px-8 lg:px-0 lg:max-w-[1060px] lg:w-[1060px] py-8 sm:py-12 md:py-16 border-b border-[rgba(55,50,47,0.12)] flex justify-center items-center gap-6">
                   <div className="w-full max-w-[616px] lg:w-[616px] px-4 sm:px-6 py-4 sm:py-5 shadow-[0px_2px_4px_rgba(50,45,43,0.06)] overflow-hidden rounded-lg flex flex-col justify-start items-center gap-3 sm:gap-4 shadow-none">
                     <Badge
@@ -581,8 +575,30 @@ export default function LandingPage() {
                   </div>
                 </div>
 
+                {/* ASCII Art - Integrated with Vapi-style responsiveness */}
+                <div className="self-stretch relative bg-[#F7F5F3] pt-8 pb-4">
+                  {/* Dotted background pattern for depth */}
+                  <div className="pointer-events-none absolute inset-0 opacity-25">
+                    <div className="w-full h-full" style={{
+                      backgroundImage: 'radial-gradient(circle, rgba(55,50,47,0.15) 1px, transparent 1px)',
+                      backgroundSize: '20px 20px'
+                    }}></div>
+                  </div>
+                  
+                  {/* ASCII Art Image with responsive positioning */}
+                  <img
+                    src="/Edited_Ascii.jpg"
+                    alt="ASCII Art - Mimicry Team Visual"
+                    className="relative mx-auto w-full max-w-full h-auto object-contain object-center mix-blend-darken transition-all duration-300 ease-in-out"
+                    style={{ 
+                      display: 'block',
+                      zIndex: 10
+                    }}
+                  />
+                </div>
+
                 {/* Founders Grid */}
-                <div className="self-stretch flex justify-center items-start">
+                <div className="self-stretch flex justify-center items-start border-b border-[rgba(55,50,47,0.12)]">
                   <div className="w-4 sm:w-6 md:w-8 lg:w-12 self-stretch relative overflow-hidden">
                     {/* Left decorative pattern */}
                     <div className="w-[120px] sm:w-[140px] md:w-[162px] left-[-40px] sm:left-[-50px] md:left-[-58px] top-[-120px] absolute flex flex-col justify-start items-start">

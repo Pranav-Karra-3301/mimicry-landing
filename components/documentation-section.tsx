@@ -22,17 +22,17 @@ export default function DocumentationSection() {
   const cards = [
     {
       title: "Voice Setup & Training",
-      description: "Create AI voice clones in seconds and train\nyour detection skills with real-time feedback.",
+      description: "Create AI voice clones in seconds and train your detection skills with real-time feedback.",
       image: "/VOICE.png",
     },
     {
       title: "Real-time Detection",
-      description: "Spot AI voices instantly with advanced\npattern recognition and analysis tools.",
+      description: "Spot AI voices instantly with advanced pattern recognition and analysis tools.",
       image: "/556989d3-dbdf-470e-81f0-04afa0674aa9.jpeg",
     },
     {
       title: "Competitive Challenges",
-      description: "Compete in 1v1 matches and climb\nthe leaderboard with strategic gameplay.",
+      description: "Compete in 1v1 matches and climb the leaderboard with strategic gameplay.",
       image: "/Screenshot 2025-10-25 at 10.10.15 AM.png",
     },
   ]
