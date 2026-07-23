@@ -20,6 +20,7 @@ const instrumentSerif = Instrument_Serif({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://mimicry.fun"),
   title: "mimicry",
   description:
     "Can you tell the difference between your friend and an AI?",
